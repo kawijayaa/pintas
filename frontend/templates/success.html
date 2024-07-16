@@ -1,0 +1,35 @@
+<div class="w-full md:w-1/2 h-1/2 p-6 md:p-8 bg-gray-200/20 drop-shadow-lg rounded-xl text-white">
+    <h1 class="text-3xl font-bold tracking-widest mb-8">pintas</h1>
+    <div class="flex flex-col gap-2 mb-4">
+        <p class="text-xl">Your shortened URL is...</p>
+        <div class="w-full bg-gray-900/50 p-2 rounded-xl text-center flex flex-col">
+            <button id="copyButton"
+                class="bg-gray-900 hover:bg-gray-800 absolute self-end px-3 py-1 rounded-xl text-white transition-all"
+                onclick="copyToClipboard()">
+                Copy
+            </button>
+            <div class="p-4">
+                <a href="/{{ .path }}" target="_blank" rel="noreferrer"
+                    class="hover:underline decoration-dashed decoration-cyan-500 underline-offset-2 text-2xl hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.5)] transition-all">{{
+                    .host }}/{{ .path
+                    }}</a>
+            </div>
+        </div>
+    </div>
+    <a href="/" class="text-center text-xl">Back</a>
+</div>
+
+<script>
+    function copyToClipboard() {
+        var button = document.getElementById("copyButton");
+        navigator.clipboard.writeText(document.querySelector('a').href);
+        button.innerHTML = "Copied!";
+        button.classList.toggle("bg-green-600");
+        button.classList.toggle("hover:bg-gray-800");
+        setTimeout(function () {
+            button.innerHTML = "Copy";
+            button.classList.toggle("bg-green-600");
+            button.classList.toggle("hover:bg-gray-800");
+        }, 2000);
+    }
+</script>
