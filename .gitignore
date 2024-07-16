@@ -1,2 +1,3 @@
 .env
 tmp/
+frontend/static/css/styles.css
