@@ -1,5 +1,5 @@
 # pintas - URL Shortener
-#### built with [gin](https://github.com/gin-gonic/gin), [gorm](https://github.com/go-gorm/gorm) and [tailwindcss](https://tailwindcss.com/)
+#### built with [htmx](https://htmx.org/), [gin](https://github.com/gin-gonic/gin), [gorm](https://github.com/go-gorm/gorm) and [tailwindcss](https://tailwindcss.com/)
 
 ![web preview](https://i.imgur.com/AznmuXm.png)
 
