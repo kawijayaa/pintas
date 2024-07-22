@@ -18,8 +18,8 @@ func Routes(r *gin.Engine) {
 		})
 	})
 	r.POST("/shorten", func(c *gin.Context) {
-		var url db.ShortUrlDto
-		var resUrl db.ShortUrl
+		var url db.UrlDto
+		var resUrl db.Url
 
 		c.Bind(&url)
 		urlJson, _ := json.Marshal(url)
@@ -47,7 +47,7 @@ func Routes(r *gin.Engine) {
 		})
 	})
 	r.GET("/:shortUrl", func(c *gin.Context) {
-		var url db.ShortUrl
+		var url db.Url
 
 		conn := db.Connect()
 		conn.Where("path = ?", c.Param("shortUrl")).First(&url)
